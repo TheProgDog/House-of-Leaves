@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
-    public Transform camera;
+    public Transform playerCamera;
     public Transform standingCam;
     public Transform crouchingCam;
 
@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour
         {
             isCrouching = !isCrouching;
             speed = isCrouching ? crouchSpeed : defaultSpeed;
-            camera.position = isCrouching ? crouchingCam.position : standingCam.position;
+            playerCamera.position = isCrouching ? crouchingCam.position : standingCam.position;
         }
 
         float x = Input.GetAxis("Horizontal");
